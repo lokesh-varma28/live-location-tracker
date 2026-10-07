@@ -13,7 +13,7 @@ The application uses the browser's **Geolocation API** to capture the user's cur
 * 👤 Unique user/target identification
 * 🔄 Automatic location updates
 * 📱 Responsive web interface
-* 🔐 Basic protected map/admin access
+* 🔐 Basic login-protected map access
 * 🌍 Optional Cloudflare Tunnel support for public access
 
 ## 🛠️ Tech Stack
@@ -68,19 +68,19 @@ live-location-tracker/
 git clone https://github.com/YOUR-USERNAME/live-location-tracker.git
 ```
 
-Move into the project directory:
+### 2. Open the project
 
 ```bash
 cd live-location-tracker
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Start the development server
+### 4. Start the development server
 
 ```bash
 npm run dev
@@ -88,11 +88,24 @@ npm run dev
 
 The application will start on the configured local port.
 
-Open the URL shown in your terminal, for example:
+For example:
 
 ```text
 http://localhost:6589
 ```
+
+## 🔐 Login Credentials
+
+The current project uses the following default login credentials:
+
+```text
+Username: admin
+Password: admin
+```
+
+After starting the application, open the local URL in your browser and use these credentials to access the protected pages.
+
+> ⚠️ These are demo credentials for development/testing purposes. Change them before using the application in a production environment.
 
 ## ▶️ Production Start
 
@@ -104,12 +117,15 @@ npm start
 
 ## 📍 How It Works
 
-1. Open the location tracking page.
-2. Allow the browser to access your location.
-3. The browser obtains your latitude and longitude using the Geolocation API.
-4. The location is sent to the Node.js server.
-5. Socket.IO broadcasts the updated location in real time.
-6. The location appears on the interactive Leaflet map.
+1. Start the application using `npm run dev`.
+2. Open the application in your browser.
+3. Login using the demo credentials.
+4. Open the location tracking page.
+5. Allow the browser to access your location.
+6. The browser obtains your latitude and longitude using the Geolocation API.
+7. The location is sent to the Node.js server.
+8. Socket.IO broadcasts the updated location in real time.
+9. The location appears on the interactive Leaflet map.
 
 ```text
 Browser
